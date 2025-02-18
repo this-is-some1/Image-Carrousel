@@ -1,8 +1,8 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 html, body {
     height: 100%;
@@ -39,10 +39,10 @@ h2 { color: #555; }
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 60vw;
-    height: 60vh;
+    width: 100vw;
+    height: 100vh;
     max-width: 1500px;
-    max-height: 300px;
+    max-height: 400px;
 }
 
 .carousel img {
@@ -111,10 +111,10 @@ footer {
 }
 
 #add {
-    font-size: 55%;
+    font-size: 100%;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     padding: 10px 15px;
     background: #dae8e9;
     color: rgb(70, 64, 63);
