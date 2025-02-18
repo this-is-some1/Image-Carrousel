@@ -1,6 +1,6 @@
 // let images = ["Alan Turing", "Steve Jobs", "Linus Torvalds", "Stephen Hawking"];
 
-let names = ["Alan Turing", "Steve Jobs", "Linus Torvalds", "Stephen Hawking"];//images.map(name => name.split(".")[0]);
+let names = ["Alan Turing", "Steve Jobs", "Linus Torvalds", "Stephen Hawking", "Sam Altman"];//images.map(name => name.split(".")[0]);
 let index = 0;
 
 function updateCarousel() {
