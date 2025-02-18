@@ -1,6 +1,6 @@
-let images = ["Alan Turing", "Steve Jobs", "Linus Torvalds", "Stephen Hawking"];
+// let images = ["Alan Turing", "Steve Jobs", "Linus Torvalds", "Stephen Hawking"];
 
-let names = images.map(name => name.split(".")[0]);
+let names = ["Alan Turing", "Steve Jobs", "Linus Torvalds", "Stephen Hawking"];//images.map(name => name.split(".")[0]);
 let index = 0;
 
 function updateCarousel() {
@@ -19,39 +19,52 @@ function updateCarousel() {
 }
 
 function nextImage() {
-    index = (index + 1) % images.length;
+    index = (index + 1) % names.length;
     updateCarousel();
 }
 
 function prevImage() {
-    index = (index - 1 + images.length) % images.length;
+    index = (index - 1 + names.length) % names.length;
     updateCarousel();
 }
 
 function fetchWikipediaDescription(name, descElement) {
-    let url = `https://fr.wikipedia.org/api/rest_v1/page/summary/${name.replace(" ", "_")}`;
+    let url = `https://fr.wikipedia.org/api/rest_v1/page/summary/${name.replace(/ /g, "_")}`;
 
-    fetch(url)
+    return fetch(url)
         .then(response => response.json())
         .then(data => {
+            if (data.type === "https://mediawiki.org/wiki/HyperSwitch/errors/not_found") {
+                throw new Error("Personne non trouvée.");
+            }
+
             if (data.extract) {
-                //console.log(data.extract)
-                descElement.textContent = data.extract//.split(".")[0]+"."
+                descElement.textContent = data.extract;
             } else {
-                descElement.textContent = "Description non disponible.";
+                alert(`Attention ! Une erreur a été renvoyée. Vérifiez le nom !\nNom donné: ${name}`)
+                throw new Error("Description non disponible.");
             }
 
             if (data.thumbnail && data.thumbnail.source) {
-                imgElement = document.getElementById("carouselImage")
+                let imgElement = document.getElementById("carouselImage");
                 imgElement.src = data.thumbnail.source;
-                console.log("image fetch:", data.thumbnail.source)
+                console.log("Image fetch:", data.thumbnail.source);
             } else {
-                console.log("Le fetch de l'image a échoué.")
+                console.log("Le fetch de l'image a échoué.");
             }
-        })
-        .catch(() => {
-            descElement.textContent = "Impossible de récupérer la description.";
         });
 }
 
+const ajout_prsn = () => {
+    let input = prompt("Indiquer le nom complet (sans fautes!) de la personne a rajouter.");
+    input = input.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    names.push(input);
+    index = names.length-1;
+    updateCarousel();
+}
+
 updateCarousel();
+
+// const btn = document.getElementById("add");
+// btn.addEventListener("click",test)
+document.getElementById("add").addEventListener("click",ajout_prsn)
