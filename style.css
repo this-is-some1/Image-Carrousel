@@ -101,3 +101,24 @@ footer {
     font-size: 110%;
     text-decoration:underline;
 }
+
+#add {
+    font-size: 55%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background: #dae8e9;
+    color: rgb(70, 64, 63);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#add:hover {
+    background: #c2fcd8;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
