@@ -110,10 +110,9 @@ footer {
     text-decoration:underline;
 }
 
-#add {
+#add, #rst {
     font-size: 100%;
     position: absolute;
-    top: 20px;
     right: 20px;
     padding: 10px 15px;
     background: #dae8e9;
@@ -125,8 +124,15 @@ footer {
     transition: background 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+#add {
+    top: 20px;
+}
 
-#add:hover {
+#rst {
+    top: 70px;
+}
+
+#add:hover, #rst:hover {
     background: #c2fcd8;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }

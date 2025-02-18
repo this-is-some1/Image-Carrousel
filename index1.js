@@ -63,8 +63,15 @@ const ajout_prsn = () => {
     updateCarousel();
 }
 
+const reset = () => {
+    names = ["Alan Turing", "Steve Jobs", "Linus Torvalds", "Stephen Hawking"];
+    index=0;
+    updateCarousel();
+}
+
 updateCarousel();
 
 // const btn = document.getElementById("add");
 // btn.addEventListener("click",test)
 document.getElementById("add").addEventListener("click",ajout_prsn)
+document.getElementById("rst").addEventListener("click",reset)
