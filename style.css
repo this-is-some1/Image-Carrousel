@@ -19,7 +19,6 @@ html, body {
     align-items: center;
 }
 
-/* Dark mode styles */
 body.dark-mode {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -43,7 +42,7 @@ body.dark-mode > div > div > button {
     background: rgba(45, 45, 45, 0.8);
 }
 
-body.dark-mode > div > div > button:hover {
+body.dark-mode > div > div  >button:hover {
     background: #444444;
 }
 
@@ -60,7 +59,6 @@ body.dark-mode footer a {
     color: #ff9999;
 }
 
-/* Original styles */
 h1 {
     color: #333;
     position: relative;
@@ -68,7 +66,9 @@ h1 {
     color: brown;
 }
 
-h2 { color: #555; }
+h2 {
+    color: #555;
+}
 
 body > div {
     width: 100vh;
@@ -120,8 +120,13 @@ body > div > div > button:hover {
     background: #ddd;
 }
 
-body > div > div > button:first-of-type{left: -35px;}
-body > div > div > button:last-of-type{right: -35px;}
+body > div > div > button:first-of-type {
+    left: -35px;
+}
+
+body > div > div > button:last-of-type {
+    right: -35px;
+}
 
 body > div > div > p {
     white-space: normal;
@@ -134,7 +139,7 @@ body > div > div > p {
 
 footer {
     font-size: 110%;
-    text-decoration:underline;
+    text-decoration: underline;
     font-style: oblique;
 }
 
@@ -153,9 +158,17 @@ body > button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-body > button:first-of-type {top: 20px;}
-body > button:nth-of-type(2) {top: 70px;}
-body > button:nth-of-type(3) {top: 120px;}
+body > button:first-of-type {
+    top: 20px;
+}
+
+body > button:nth-of-type(2) {
+    top: 70px;
+}
+
+body > button:nth-of-type(3) {
+    top: 120px;
+}
 
 body > button:hover {
     background: #c2fcd8;
@@ -163,14 +176,12 @@ body > button:hover {
 }
 
 body > button:nth-of-type(3) {
-/* #darkModeToggle { */
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-/* #darkModeToggle i { */
-body > button:nth-of-type(3) > i {
+body > button:nth-of-type(3)>i {
     font-size: 16px;
 }
 
@@ -179,12 +190,19 @@ body > button:nth-of-type(3) > i {
         width: 100%;
         height: 90%;
     }
+
     body > div > div > button {
         font-size: 24px;
         padding: 10px;
     }
-    body > div > div > button:first-of-type { left: 10px; }
-    body > div > div > button:last-of-type { right: 10px; }
+
+    body > div > div > button:first-of-type {
+        left: 10px;
+    }
+
+    body > div > div > button:last-of-type {
+        right: 10px;
+    }
 
     body > div > div > img {
         max-width: 90%;
