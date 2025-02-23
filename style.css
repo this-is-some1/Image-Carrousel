@@ -17,7 +17,7 @@ html, body {
     align-items: center;
 }
 
-/* Mode sombre */
+/* Dark mode styles */
 body.dark-mode {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -41,7 +41,7 @@ body.dark-mode > div > div > button {
     background: rgba(45, 45, 45, 0.8);
 }
 
-body.dark-mode > div > div > button:hover {
+body.dark-mode > div > div  >button:hover {
     background: #444444;
 }
 
@@ -58,7 +58,7 @@ body.dark-mode footer a {
     color: #ff9999;
 }
 
-/* Styles généraux */
+/* Original styles */
 h1 {
     color: brown;
     position: relative;
@@ -120,8 +120,8 @@ body > div > div > button:hover {
     background: #ddd;
 }
 
-body > div > div > button:first-of-type { left: -35px; }
-body > div > div > button:last-of-type { right: -35px; }
+body > div > div > button:first-of-type{left: -35px;}
+body > div > div > button:last-of-type{right: -35px;}
 
 body > div > div > p {
     white-space: normal;
@@ -155,9 +155,9 @@ body > button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-body > button:first-of-type { top: 20px; } /* #add */
-body > button:nth-of-type(2) { top: 70px; } /* #rst */
-body > button:nth-of-type(3) { top: 120px; } /* #darkModeToggle */
+body > button:first-of-type {top: 20px;}
+body > button:nth-of-type(2) {top: 70px;}
+body > button:nth-of-type(3) {top: 120px;}
 
 body > button:hover {
     background: #c2fcd8;
@@ -170,6 +170,7 @@ body > button:nth-of-type(3) {
     gap: 8px;
 }
 
+/* #darkModeToggle i { */
 body > button:nth-of-type(3) > i {
     font-size: 16px;
 }
@@ -185,7 +186,6 @@ body > button:nth-of-type(3) > i {
         font-size: 24px;
         padding: 10px;
     }
-
     body > div > div > button:first-of-type { left: 10px; }
     body > div > div > button:last-of-type { right: 10px; }
 
