@@ -2,13 +2,14 @@ let names = ["Alan Turing", "Steve Jobs", "Linus Torvalds", "Stephen Hawking", "
 let index = 0;
 
 const darkModeToggle = document.querySelectorAll("button")[2];
-const darkModeIcon = darkModeToggle.querySelector('i');
+const darkModeIcon = darkModeToggle.textContent;
+
+localStorage.setItem('darkMode', "true")
 
 const isDarkMode = localStorage.getItem('darkMode') === 'true';
 if (isDarkMode) {
+    darkModeToggle.textContent[0] = "🌞"
     document.body.classList.add('dark-mode');
-    darkModeIcon.classList.remove('fa-moon');
-    darkModeIcon.classList.add('fa-sun');
 }
 
 function toggleDarkMode() {
@@ -16,12 +17,8 @@ function toggleDarkMode() {
     const isDark = document.body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', isDark);
 
-    if (isDark) {
-        darkModeIcon.classList.remove('fa-moon');
-        darkModeIcon.classList.add('fa-sun');
-    } else {
-        darkModeIcon.classList.remove('fa-sun');
-        darkModeIcon.classList.add('fa-moon');
+    if (isDark) {darkModeToggle.textContent = "🌞 Mode clair"
+    } else {darkModeToggle.textContent = "🌙 Mode sombre"
     }
 }
 
@@ -113,3 +110,4 @@ document.addEventListener("keydown", function(event) {
     } else if (event.key == "ArrowRight") {document.querySelectorAll("button")[4].click();
     }
 });
+//🌞
