@@ -10,16 +10,12 @@ const darkModeToggle = document.querySelectorAll("button")[2];
 
 const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
-console.log(isDarkMode)
-
 if (isDarkMode) {
     darkModeToggle.textContent = "🌞 Mode clair";
     document.body.classList.add('dark-mode');
 } else {
     darkModeToggle.textContent = "🌙 Mode sombre";
 }
-
-console.log(isDarkMode)
 
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
@@ -106,15 +102,12 @@ const rst = () => {
     updateCarousel();
 };
 
-// Wait for DOM to load before attaching event listeners
 document.addEventListener("DOMContentLoaded", function() {
     updateCarousel();
 
     document.querySelector("h1").addEventListener("click", () => {
-        const newColor = prompt("Indiquer la nouvelle couleur");
-        if (newColor) {
-            document.querySelector("h1").style.color = newColor;
-        }
+        const newColor = prompt("Indiquer la nouvelle couleur (en anglais)");
+        if (newColor) document.querySelector("h1").style.color = newColor;
     });
     
     let buttons = document.querySelectorAll("button");
